@@ -6,7 +6,7 @@
 - 仓库位置: https://github.com/iEDA-Open-Source-Core-Project/iEDA-data-set/edit/main/README.md  
 - 分支:main  
 - 贡献者: 卢狗  
-**在文件title同样写明相关信息**  
+**在文件ysyx_name.v的title部分同步相关信息**  
 
 
 ## e203
