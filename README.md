@@ -6,3 +6,10 @@
   2 级流水线处理器核,流水线的按序主体是位于第一级的“取指”和位于第二级的“执行”和“写回”;
 - 仓库位置：https://github.com/iEDA-Open-Source-Core-Project/e203
 - 分支： main
+
+
+## darkriscv
+
+- 内核配置：3 级流水线处理器核;
+- 仓库位置：https://github.com/iEDA-Open-Source-Core-Project/darkriscv
+- 分支： freeze
