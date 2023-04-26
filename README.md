@@ -5,6 +5,8 @@
   每级流水的基本左右: if取指, id译码, ex执行, mem访存, wb写会, ICACHE+DCACHE指令与数据高速缓存, AXI4-Full总线连接核与SoC  
 - 仓库位置: https://github.com/iEDA-Open-Source-Core-Project/iEDA-data-set/edit/main/README.md  
 - 分支:main  
+- 贡献者: 卢狗
+- 在文件title同样写明相关信息
 
 
 ## e203
