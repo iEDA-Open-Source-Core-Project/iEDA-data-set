@@ -1,6 +1,12 @@
 `timescale 1ns / 1ps
 //notice :  dcache write_valid must be ahead of the dcache read_valid 
-
+/* 
+- 内核配置：含pre-decode id/ex wb 3 级流水线处理器核; ICACHE+DCACHE指令与数据高速缓存;
+  AXI4-Full总线连接核与SoC支持RISCV-32 I指令集
+- 仓库位置：https://github.com/iEDA-Open-Source-Core-Project/darkriscv
+- 分支： freeze
+- 贡献者 ： 郭栋良 、尚杰
+*/
 
 
 
