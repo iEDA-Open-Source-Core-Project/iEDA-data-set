@@ -5,7 +5,7 @@
   - IMC指令集,Zicsr，Zifencei,Smepmp;
 - 仓库位置： https://github.com/iEDA-Open-Source-Core-Project/Ibex.git
 - 分支： freeze
-- 贡献者 ： 苗恒
+- 贡献者 ： 苗恒, 李子龙
 */
 /* verilator lint_off DECLFILENAME */
 /* verilator lint_off UNUSEDPARAM */
