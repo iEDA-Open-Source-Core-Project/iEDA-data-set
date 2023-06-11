@@ -3,7 +3,6 @@
   - 含Prefetch Buffer的 if 和 id/ex 2 级流水线处理器核; 
   - AXI4-Full总线连接核与SoC支持RISCV-32;
   - IMC指令集,Zicsr，Zifencei,Smepmp;
-  - 内部ibex_tracing模块注释；
 - 仓库位置： https://github.com/iEDA-Open-Source-Core-Project/Ibex.git
 - 分支： freeze
 - 贡献者 ： 苗恒
@@ -12,6 +11,7 @@
 /* verilator lint_off UNUSEDPARAM */
 /* verilator lint_off UNUSEDSIGNAL */
 /* verilator lint_off REDEFMACRO */
+`define unused_ibex_tracing
 `define RISCV_FORMAL
 `define RVFI
 // Copyright lowRISC contributors.
@@ -19754,6 +19754,7 @@ module ibex_tracer (
   // Keep them as part of the interface to change the tracer more easily in the future. Assigning
   // these signals to unused_* signals marks them explicitly as unused, an annotation picked up by
   // linters, including Verilator lint.
+`ifdef unused_ibex_tracing
 
   logic        unused_rvfi_valid = rvfi_valid;
   logic [63:0] unused_rvfi_order = rvfi_order;
@@ -19779,7 +19780,7 @@ module ibex_tracer (
   logic [31:0] unused_rvfi_mem_rdata= rvfi_mem_rdata; 
   logic [31:0] unused_rvfi_mem_wdata= rvfi_mem_wdata;
 
-/*
+`else
   logic [63:0] unused_rvfi_order = rvfi_order;
   logic        unused_rvfi_trap = rvfi_trap;
   logic        unused_rvfi_halt = rvfi_halt;
@@ -20758,7 +20759,7 @@ module ibex_tracer (
       endcase
     end
   end
-*/
+`endif
 endmodule
 // Copyright lowRISC contributors.
 // Licensed under the Apache License, Version 2.0, see LICENSE for details.
