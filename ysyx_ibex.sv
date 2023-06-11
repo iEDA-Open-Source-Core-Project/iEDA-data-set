@@ -1,6 +1,9 @@
 /*
-- 内核配置：含Prefetch Buffer的 if 和 id/ex 2 级流水线处理器核; 
-  AXI4-Full总线连接核与SoC支持RISCV-32 IMC指令集,Zicsr，Zifencei,Smepmp
+- 内核配置：
+  - 含Prefetch Buffer的 if 和 id/ex 2 级流水线处理器核; 
+  - AXI4-Full总线连接核与SoC支持RISCV-32;
+  - IMC指令集,Zicsr，Zifencei,Smepmp;
+  - 内部ibex_tracing模块注释；
 - 仓库位置： https://github.com/iEDA-Open-Source-Core-Project/Ibex.git
 - 分支： freeze
 - 贡献者 ： 苗恒
@@ -19751,6 +19754,32 @@ module ibex_tracer (
   // Keep them as part of the interface to change the tracer more easily in the future. Assigning
   // these signals to unused_* signals marks them explicitly as unused, an annotation picked up by
   // linters, including Verilator lint.
+
+  logic        unused_rvfi_valid = rvfi_valid;
+  logic [63:0] unused_rvfi_order = rvfi_order;
+  logic [31:0] unused_rvfi_insn = rvfi_insn;
+  logic        unused_rvfi_trap = rvfi_trap;
+  logic        unused_rvfi_halt = rvfi_halt;
+  logic        unused_rvfi_intr = rvfi_intr;
+  logic [ 1:0] unused_rvfi_mode = rvfi_mode;
+  logic [ 1:0] unused_rvfi_ixl = rvfi_ixl;
+  logic [ 4:0] unused_rvfi_rs1_addr = rvfi_rs1_addr;
+  logic [ 4:0] unused_rvfi_rs2_addr = rvfi_rs2_addr;
+  logic [ 4:0] unused_rvfi_rs3_addr = rvfi_rs3_addr;
+  logic [31:0] unused_rvfi_rs1_rdata= rvfi_rs1_rdata; 
+  logic [31:0] unused_rvfi_rs2_rdata= rvfi_rs2_rdata; 
+  logic [31:0] unused_rvfi_rs3_rdata= rvfi_rs3_rdata; 
+  logic [ 4:0] unused_rvfi_rd_addr  = rvfi_rd_addr;
+  logic [31:0] unused_rvfi_rd_wdata = rvfi_rd_wdata;
+  logic [31:0] unused_rvfi_pc_rdata = rvfi_pc_rdata;  
+  logic [31:0] unused_rvfi_pc_wdata = rvfi_pc_wdata;  
+  logic [31:0] unused_rvfi_mem_addr = rvfi_mem_addr;  
+  logic [ 3:0] unused_rvfi_mem_rmask= rvfi_mem_rmask; 
+  logic [ 3:0] unused_rvfi_mem_wmask= rvfi_mem_wmask; 
+  logic [31:0] unused_rvfi_mem_rdata= rvfi_mem_rdata; 
+  logic [31:0] unused_rvfi_mem_wdata= rvfi_mem_wdata;
+
+/*
   logic [63:0] unused_rvfi_order = rvfi_order;
   logic        unused_rvfi_trap = rvfi_trap;
   logic        unused_rvfi_halt = rvfi_halt;
@@ -20323,23 +20352,7 @@ module ibex_tracer (
   function automatic void decode_load_insn();
     string      mnemonic;
 
-    /*
-    Gives wrong results in Verilator < 4.020.
-    See https://github.com/lowRISC/ibex/issues/372 and
-    https://www.veripool.org/issues/1536-Verilator-Misoptimization-in-if-and-case-with-default-statement-inside-a-function
 
-    unique case (rvfi_insn[14:12])
-      3'b000: mnemonic = "lb";
-      3'b001: mnemonic = "lh";
-      3'b010: mnemonic = "lw";
-      3'b100: mnemonic = "lbu";
-      3'b101: mnemonic = "lhu";
-      default: begin
-        decode_mnemonic("INVALID");
-        return;
-      end
-    endcase
-    */
     logic [2:0] size;
     size = rvfi_insn[14:12];
     if (size == 3'b000) begin
@@ -20745,7 +20758,7 @@ module ibex_tracer (
       endcase
     end
   end
-
+*/
 endmodule
 // Copyright lowRISC contributors.
 // Licensed under the Apache License, Version 2.0, see LICENSE for details.
