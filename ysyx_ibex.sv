@@ -1,11 +1,13 @@
 /*
+## ibex
 - 内核配置：
-  - 含Prefetch Buffer的 if 和 id/ex 2 级流水线处理器核; 
-  - AXI4-Full总线连接核与SoC支持RISCV-32;
-  - IMC指令集,Zicsr，Zifencei,Smepmp;
+  - ibex为 Prefetch Buffer 的 if 和 id/ex 2 级流水线处理器核;
+  - AXI4-Full 总线连接核与 SoC 支持 RISCV-32;
+  - IMC 指令集,Zicsr，Zifencei,Smepmp;
 - 仓库位置： https://github.com/iEDA-Open-Source-Core-Project/Ibex.git
-- 分支： freeze
+- 分支： main
 - 贡献者 ： 苗恒, 李子龙
+
 */
 /* verilator lint_off DECLFILENAME */
 /* verilator lint_off UNUSEDPARAM */
