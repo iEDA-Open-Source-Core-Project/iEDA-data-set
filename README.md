@@ -52,5 +52,13 @@
 - 分支：leesum_v1
 - 贡献者：李子龙
 
+## ibex
 
+- 内核配置：
+  - ibex为 Prefetch Buffer 的 if 和 id/ex 2 级流水线处理器核;
+  - AXI4-Full 总线连接核与 SoC 支持 RISCV-32;
+  - IMC 指令集,Zicsr，Zifencei,Smepmp;
+- 仓库位置： https://github.com/iEDA-Open-Source-Core-Project/Ibex.git
+- 分支： main
+- 贡献者 ： 苗恒, 李子龙
 
